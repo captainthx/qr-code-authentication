@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: qr-code-authentication
+    version: 0.0.1
+  data:
+    redis:
+      host: 192.168.1.188
+      port: 6379
+server:
+  port: 8081
+
+api:
+  server:
+    base-url: http://192.168.1.188:${server.port}
+    callback-url: ${api.server.base-url}/v1/qrCode/
+  file:
+    directory: file
+    image-format: png
+  qr:
+    width: 250
+    height: 250
+
